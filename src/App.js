@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { initialGates } from "./data/gatesData";
 
-
 export default function App() {
   const [gates, setGates] = useState(initialGates);
   const [activeGate, setActiveGate] = useState("Gate 1");
