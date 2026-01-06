@@ -29,6 +29,7 @@ const generateRandomWord = () => {
       {/* Sidebar */}
       <div className="w-48 bg-gray-100 p-4">
         {Object.keys(gates).map((gate) => (
+          
           <button
             key={gate}
             onClick={() => setActiveGate(gate)}
@@ -38,32 +39,15 @@ const generateRandomWord = () => {
                 : "bg-white"
             }`}
           >
-            {gate}
+             <span>{gate}</span>
+      <span className="ml-7 text-sm opacity-80">
+        {gates[gate].length}
+      </span>
           </button>
         ))}
       </div>
 
-      {/* Main Content */}
-      {/* <div className="flex-1 p-6 overflow-y-auto">
-        <h1 className="text-2xl font-bold mb-4">{activeGate}</h1>
-
-        {gates[activeGate].map((item, index) => (
-          <div key={index} className="border p-4 mb-3 rounded">
-            <p className="font-semibold">{item.word}</p>
-
-            {visible[index] && (
-              <p className="text-gray-700 mt-2">{item.meaning}</p>
-            )}
-
-            <button
-              onClick={() => toggleMeaning(index)}
-              className="mt-2 text-sm text-blue-600"
-            >
-              {visible[index] ? "Hide Meaning" : "Show Meaning"}
-            </button>
-          </div>
-        ))}
-      </div> */}
+      
        <div className="flex-1 p-6 overflow-y-auto">
         <h1 className="text-2xl font-bold mb-4">{activeGate}</h1>
 
