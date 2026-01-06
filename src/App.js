@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { initialGates } from "./data/gatesData";
 
 export default function App() {
@@ -6,6 +6,12 @@ export default function App() {
   const [activeGate, setActiveGate] = useState("Gate 1");
   const [visible, setVisible] = useState({});
 const [randomIndex, setRandomIndex] = useState(null);
+// This ensures that when you switch tabs, the UI "refreshes"
+useEffect(() => {
+  setRandomIndex(null);
+  // Reset the visible meanings object/array
+  setVisible({}); 
+}, [activeGate]);
 const generateRandomWord = () => {
     const words = gates[activeGate];
     const index = Math.floor(Math.random() * words.length);
